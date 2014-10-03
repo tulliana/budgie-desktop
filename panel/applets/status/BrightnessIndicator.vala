@@ -9,12 +9,6 @@
  * (at your option) any later version.
  */
 
-[DBus (name = "org.gnome.SettingsDaemon.Power.Screen")]
-public interface BrightnessInterface : Object
-{
-    public abstract int Brightness { public owned get ;  public set ; }
-}
-
 public class BrightnessIndicator
 {
     /** For the Status popover */

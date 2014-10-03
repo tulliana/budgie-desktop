@@ -14,7 +14,7 @@ CLEANFILES =
 SUBDIRS = \
 	data \
 	gvc \
-	widgets \
+	core \
 	imports \
 	budgie-plugin \
 	panel \

@@ -29,7 +29,7 @@ libstatusapplet_la_CFLAGS = \
 	$(LIBPEAS_CFLAGS)
 
 libstatusapplet_la_LIBADD = \
-	${top_builddir}/widgets/libbudgiewidgets.la \
+	${top_builddir}/core/libbudgiecore.la \
 	${top_builddir}/budgie-plugin/libbudgie-plugin.la \
 	${top_builddir}/gvc/libgvc.la \
 	$(GTK3_LIBS) \
@@ -43,14 +43,14 @@ libstatusapplet_la_LDFLAGS = \
 
 libstatusapplet_la_VALAFLAGS = \
 	--vapidir=${top_builddir}/budgie-plugin \
-	--vapidir=${top_builddir}/widgets \
+	--vapidir=${top_builddir}/core \
 	--vapidir=${top_srcdir} \
 	$(VALAFLAGS) \
 	--pkg gtk+-3.0 \
 	--pkg libpeas-1.0 \
 	--pkg PeasGtk-1.0 \
 	--pkg budgie-1.0 \
-	--pkg BudgieWidgets \
+	--pkg BudgieCore \
 	--pkg libpulse \
 	--pkg gvc-1.0 \
 	--pkg upower-glib-1.0

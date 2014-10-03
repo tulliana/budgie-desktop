@@ -85,6 +85,7 @@ AC_CONFIG_FILES([Makefile
                 gvc/Makefile
                 budgie-plugin/budgie-1.0.pc
                 budgie-plugin/Makefile
+                core/Makefile
                 imports/Makefile
                 imports/natray/Makefile
                 panel/Makefile
@@ -99,7 +100,6 @@ AC_CONFIG_FILES([Makefile
                 panel/applets/notifications/Makefile
                 rundialog/Makefile
                 session/Makefile
-                widgets/Makefile
                 wm/Makefile])
 AC_OUTPUT
 
