@@ -10,7 +10,6 @@
  */
 
 const string MIXER_NAME = "Budgie Volume Control";
-const int icon_size = 22;
 
 public class SoundIndicator : Gtk.Bin
 {

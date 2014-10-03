@@ -16,12 +16,15 @@ public class StatusApplet : Budgie.Plugin, Peas.ExtensionBase
     }
 }
 
+const int icon_size = 22;
+
 public class StatusAppletImpl : Budgie.Applet
 {
 
     protected Gtk.Box widget;
     protected SoundIndicator sound;
     protected PowerIndicator power;
+    protected BrightnessIndicator bright;
     protected Budgie.Popover popover;
 
     public StatusAppletImpl()
@@ -39,6 +42,8 @@ public class StatusAppletImpl : Budgie.Applet
 
         sound = new SoundIndicator();
         widget.pack_start(sound, false, false, 0);
+
+        bright = new BrightnessIndicator();
 
         create_popover();
 
@@ -87,6 +92,22 @@ public class StatusAppletImpl : Budgie.Applet
         row += 1;
         grid.attach(sep, 0, row, 2, 1);
         row += 1;
+
+        /* brightness row */
+        if (bright.usable) {
+            grid.attach(bright.status_image, 0, row, 1, 1);
+            /* Add sound widget */
+            grid.attach(bright.status_widget, 1, row, 1, 1);
+            bright.status_widget.hexpand = true;
+            bright.status_widget.halign = Gtk.Align.FILL;
+            bright.status_widget.valign = Gtk.Align.END;
+            bright.status_image.valign = Gtk.Align.CENTER;
+
+            sep = new Gtk.Separator(Gtk.Orientation.HORIZONTAL);
+            row += 1;
+            grid.attach(sep, 0, row, 2, 1);
+            row += 1;
+        }
 
         /* Settings */
         var img = new Gtk.Image.from_icon_name("preferences-system-symbolic", Gtk.IconSize.INVALID);

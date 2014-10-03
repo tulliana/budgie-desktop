@@ -16,6 +16,7 @@ EXTRA_DIST += \
 pkglib_LTLIBRARIES += libstatusapplet.la
 
 libstatusapplet_la_SOURCES = \
+	BrightnessIndicator.vala \
 	StatusApplet.vala \
 	SoundIndicator.vala \
 	PowerIndicator.vala
