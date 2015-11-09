@@ -46,6 +46,9 @@ int main(int argc, char **argv)
         g_setenv(AT_BRIDGE_OPT, "1", TRUE);
         meta_init();
 
+        /* Let gnome-session know we're good to go */
+        meta_register_with_session();
+
         /* Reset the options */
         g_unsetenv(GAIL_OPT);
         g_unsetenv(AT_BRIDGE_OPT);
